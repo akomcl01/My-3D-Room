@@ -44,7 +44,7 @@ export default class Camera
         this.modes.screen = {}
         this.modes.screen.instance = this.instance.clone()
         this.modes.screen.instance.rotation.reorder('YXZ')
-        this.modes.screen.instance.position.set(0, 3.5, 0.5) // Significantly increased Y position to 3.5
+        this.modes.screen.instance.position.set(0, 3.5, 1.2) // Adjusted Z position to 1.2
         this.modes.screen.instance.lookAt(0, 3.5, 0) // Look at center of screen at same height
 
         // Debug
