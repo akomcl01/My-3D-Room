@@ -5,9 +5,9 @@ import GoogleLeds from './GoogleLeds.js'
 import LoupedeckButtons from './LoupedeckButtons.js'
 import CoffeeSteam from './CoffeeSteam.js'
 import TopChair from './TopChair.js'
-import ElgatoLight from './ElgatoLight.js'
 import BouncingLogo from './BouncingLogo.js'
 import Screen from './Screen.js'
+import Instructions from './Instructions.js'
 
 export default class World
 {
@@ -27,9 +27,9 @@ export default class World
                 this.setLoupedeckButtons()
                 this.setCoffeeSteam()
                 this.setTopChair()
-                this.setElgatoLight()
                 this.setBouncingLogo()
                 this.setScreens()
+                this.setInstructions()
             }
         })
     }
@@ -59,11 +59,6 @@ export default class World
         this.topChair = new TopChair()
     }
 
-    setElgatoLight()
-    {
-        this.elgatoLight = new ElgatoLight()
-    }
-
     setBouncingLogo()
     {
         this.bouncingLogo = new BouncingLogo()
@@ -79,6 +74,11 @@ export default class World
             this.resources.items.macScreenModel.scene.children[0],
             '/assets/videoStream.mp4'
         )
+    }
+
+    setInstructions()
+    {
+        this.instructions = new Instructions()
     }
 
     resize()

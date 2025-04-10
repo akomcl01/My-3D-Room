@@ -61,16 +61,7 @@ export default class CoffeeSteam
                 uLightMapTexture: { value: this.model.lightMapTexture },
 
                 uNightMix: { value: 1 },
-                uNeutralMix: { value: 0 },
-
-                uLightTvColor: { value: new THREE.Color(this.colors.tv) },
-                uLightTvStrength: { value: 1.47 },
-
-                uLightDeskColor: { value: new THREE.Color(this.colors.desk) },
-                uLightDeskStrength: { value: 1.9 },
-
-                uLightPcColor: { value: new THREE.Color(this.colors.pc) },
-                uLightPcStrength: { value: 1.4 }
+                uNeutralMix: { value: 0 }
             },
             vertexShader: vertexShader,
             fragmentShader: fragmentShader
@@ -101,60 +92,6 @@ export default class CoffeeSteam
                     this.model.material.uniforms.uNeutralMix,
                     'value',
                     { label: 'uNeutralMix', min: 0, max: 1 }
-                )
-
-            this.debugFolder
-                .addInput(
-                    this.colors,
-                    'tv',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightTvColor.value.set(this.colors.tv)
-                })
-
-            this.debugFolder
-                .addInput(
-                    this.model.material.uniforms.uLightTvStrength,
-                    'value',
-                    { label: 'uLightTvStrength', min: 0, max: 3 }
-                )
-
-            this.debugFolder
-                .addInput(
-                    this.colors,
-                    'desk',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightDeskColor.value.set(this.colors.desk)
-                })
-
-            this.debugFolder
-                .addInput(
-                    this.model.material.uniforms.uLightDeskStrength,
-                    'value',
-                    { label: 'uLightDeskStrength', min: 0, max: 3 }
-                )
-
-            this.debugFolder
-                .addInput(
-                    this.colors,
-                    'pc',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightPcColor.value.set(this.colors.pc)
-                })
-
-            this.debugFolder
-                .addInput(
-                    this.model.material.uniforms.uLightPcStrength,
-                    'value',
-                    { label: 'uLightPcStrength', min: 0, max: 3 }
                 )
         }
     }
